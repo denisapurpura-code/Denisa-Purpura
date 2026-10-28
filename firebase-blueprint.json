@@ -1,0 +1,42 @@
+{
+  "entities": {
+    "FileData": {
+      "title": "FileData",
+      "description": "Stored files and data in Firebase",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "uploadedBy": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "url",
+        "name",
+        "uploadedBy",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/files/{fileId}": {
+      "schema": {
+        "$ref": "FileData"
+      },
+      "description": "User files collection"
+    }
+  }
+}
